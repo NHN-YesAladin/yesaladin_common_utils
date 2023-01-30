@@ -34,7 +34,8 @@ public enum ErrorCode {
     CATEGORY_ALREADY_DELETED("카테고리가 이미 삭제되었습니다.", HttpStatus.CONFLICT),
     MEMBER_ALREADY_BLOCKED("이미 차단된 회원입니다.", HttpStatus.CONFLICT),
     MEMBER_ALREADY_UNBLOCKED("이미 차단 해지된 회원입니다.", HttpStatus.CONFLICT),
-    ADDRESS_ALREADY_DELETED("이미 삭제된 배송지 입니다.", HttpStatus.CONFLICT);
+    ADDRESS_ALREADY_DELETED("이미 삭제된 배송지 입니다.", HttpStatus.CONFLICT),
+    PRODUCT_RELATION_ALREADY_EXIST("상품 연관관계가 이미 존재합니다.", HttpStatus.CONFLICT);
     private final String displayName;
     private final HttpStatus responseStatus;
 }

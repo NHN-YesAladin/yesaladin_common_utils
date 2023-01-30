@@ -3,8 +3,9 @@ package shop.yesaladin.common.dto;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 /**
@@ -13,14 +14,15 @@ import org.springframework.http.HttpStatus;
  * @param <T> 응답 데이터 타입
  */
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class ResponseDto<T> {
 
-    private final boolean success;
+    private boolean success;
     @JsonIgnore
-    private final HttpStatus status;
-    private final T data;
-    private final List<String> errorMessages;
+    private HttpStatus status;
+    private T data;
+    private List<String> errorMessages;
 
     public static <T> ResponseDtoBuilder<T> builder() {
         return new ResponseDtoBuilder<T>();
