@@ -28,6 +28,7 @@ public enum ErrorCode {
     MEMBER_NOT_FOUND("회원을 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
     MEMBER_ROLE_NOT_FOUND("해당 회원의 권한을 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
     MEMBER_GRADE_NOT_FOUND("해당 등급을 조회할 수 없습니다.", HttpStatus.NOT_FOUND),
+    PRODUCT_NOT_SUBSCRIBE_PRODUCT("구독 가능한 상품이 아닙니다.", HttpStatus.BAD_REQUEST),
     ORDER_BAD_REQUEST("잘못된 주문 요청입니다.", HttpStatus.BAD_REQUEST),
     BAD_REQUEST("해당 요청은 처리가 불가합니다.", HttpStatus.BAD_REQUEST),
     PRODUCT_SELF_RELATE("동일한 상품은 연관관계를 맺을 수 없습니다.", HttpStatus.BAD_REQUEST),
