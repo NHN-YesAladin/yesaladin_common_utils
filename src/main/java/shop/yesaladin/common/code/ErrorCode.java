@@ -30,7 +30,9 @@ public enum ErrorCode {
     FUTURE("최대 오늘까지의 정보만 조회 가능합니다.", HttpStatus.BAD_REQUEST),
     START_OVER_END("마지막 날짜는 시작 날짜보다 클 수 없습니다.", HttpStatus.BAD_REQUEST),
     UNAUTHORIZED("해당 요청은 인증이 필요합니다.", HttpStatus.UNAUTHORIZED),
+    ORDER_UNAUTHORIZED_MEMBER("해당 주문에 대한 권한이 없습니다.", HttpStatus.UNAUTHORIZED),
     FORBIDDEN("해당 요청은 접근이 불가합니다.", HttpStatus.FORBIDDEN),
+    ORDER_STATUS_CODE_NOT_FOUND("존재하지 않는 주문 상태입니다.", HttpStatus.NOT_FOUND),
     NOT_FOUND("요청 객체를 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
     FILE_NOT_FOUND("파일을 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
     PRODUCT_NOT_FOUND("상품을 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
@@ -68,6 +70,8 @@ public enum ErrorCode {
     MEMBER_PHONE_ALREADY_EXIST("해당 전화번호로 등록된 계정이 존재합니다.", HttpStatus.CONFLICT),
     MEMBER_NICKNAME_ALREADY_EXIST("해당 닉네임은 이미 사용중입니다.", HttpStatus.CONFLICT),
     MEMBER_EMAIL_ALREADY_EXIST("해당 이메일로 등록된 계정이 존재합니다.", HttpStatus.CONFLICT),
+    ORDER_ALREADY_HIDE_ON("이미 숨김처리된 주문입니다.", HttpStatus.CONFLICT),
+    ORDER_ALREADY_HIDE_OFF("이미 숨김처리 해제된 주문입니다.", HttpStatus.CONFLICT),
     INTERNAL_SERVER_ERROR("서버에서 오류가 발행했습니다.", HttpStatus.INTERNAL_SERVER_ERROR),
     ;
     private final String displayName;
