@@ -9,14 +9,20 @@ public class ServerException extends RuntimeException {
 
     private final ErrorCode errorCode;
     private final HttpStatus responseStatus;
+    private final String displayErrorMessage;
 
     public ServerException(ErrorCode errorCode, String messageForLog) {
+        this(errorCode, errorCode.getDisplayName(), messageForLog);
+    }
+
+    public ServerException(ErrorCode errorCode, String displayErrorMessage, String messageForLog) {
         super(messageForLog);
         this.errorCode = errorCode;
         this.responseStatus = errorCode.getResponseStatus();
+        this.displayErrorMessage = displayErrorMessage;
     }
 
     public String getDisplayErrorMessage() {
-        return errorCode.getDisplayName();
+        return this.displayErrorMessage;
     }
 }
